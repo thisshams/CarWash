@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body align="center">
+    <h2>Search Places</h2>
+    <form method="POST">
+        <br>
+        {{form.place}} <br><br>
+        {{form.submit}}
+    </form>
+    <br><br>
+
+    <table>
+        {%if data %}
+        <th>Palce</th>
+        <th>Address</th>
+        <th>Services</th>
+        {% for i in data %}
+        <tr>
+            <td>{{i.place}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.services}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+
+    <style>
+        td {
+            background-color: rgb(219, 219, 219);
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+
+</body>
+
+</html>

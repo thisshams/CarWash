@@ -1,0 +1,44 @@
+body{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    flex-direction: column;
+
+}
+div{
+    border: 2px solid black;
+    background-color: rgb(245, 245, 245);
+    padding:20px 20px;
+    border-radius: 10%;
+    width:20vw;
+}
+input{
+    margin:10px;
+    height:20px;
+    width: 90%;
+    border-radius: 5px;
+
+}
+
+form{
+    margin:10px;
+    font-family: calibri;
+    font-size: x-large;
+    font-weight: 400;
+}
+input[type="submit"]{
+    padding-top:5px;
+    padding-bottom:5px ;
+    background-color: rgb(60, 162, 60);
+    color:white;
+    width:80px;
+    height:25px;
+    padding: 5px;
+
+}
+label{
+    margin-left: 8px;
+}

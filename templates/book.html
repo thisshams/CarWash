@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body align="center">
+    <form method="POST">
+        <h1>Book</h1><br>
+        {{form.place}} <br><br>
+        {{form.date}} <br><br>
+        {{form.submit}}
+    </form>
+    <br><br>
+
+    <table>
+        {%if washdata %}
+        <!-- <th>Select</th> -->
+        <th>Palce</th>
+        <th>Address</th>
+        <th>Services</th>
+        <th>Booking Left</th>
+        <th>Book</th>
+        {% for i in washdata %}
+        <tr>
+            <!-- <td><input type='radio' name="selection"></td> -->
+            <td>{{i.place}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.services}}</td>
+            <td>{{bookdata[loop.index-1]}}</td>
+            <td>
+                <form method="post" action="/bookwash">
+                    <input type="text" id="one" name="place" hidden value={{i.place}}>
+                    <input type="text" id="two" name="address" hidden value={{i.address}}>
+                    <input type="text" name="date" hidden value={{form.date.data}}>
+                    <!-- <input type="number" id="three"
+                        name="bookingleft" hidden value={{bookdata[count]}}> -->
+                    <input type="submit" value="Book">
+                </form>
+                <!-- <script>
+                    document.getElementById("one").value = {{ i.place }}
+                    document.getElementById("two").value = i.address
+                    document.getElementById("three").value = bookdata[count]
+                </script> -->
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table><br>
+
+
+
+    <!-- <table>
+        {%if bookdata %}
+        <th>Palce</th>
+        <th>Address</th>
+        <th>Services</th>
+        {% for i in bookdata %}
+        <tr>
+            <td>{{i.place}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.services}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table> -->
+
+    <style>
+        td {
+            background-color: rgb(219, 219, 219);
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+
+</body>
+
+</html>

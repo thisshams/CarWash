@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/user.css')}}" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <h1>User Panel</h1>
+    <a href="{{url_for('logout')}}"><button>Logout</button></a>
+    <div id="menu">
+        <a href="/searchPlace">
+            <button id="searchByPlace">Search Based on Place</button>
+        </a>
+        <a href="/book">
+            <button id="book">Book Car Wash</button>
+        </a>
+        <a href="bookingStatusCheck">
+            <button id="checkStatus">Booking Status</button>
+        </a>
+    </div>
+</body>
+
+</html>

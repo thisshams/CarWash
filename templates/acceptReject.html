@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body align="center">
+    <table>
+        {%if data %}
+        <th>Email</th>
+        <th>Place</th>
+        <th>Address</th>
+        <th>Date</th>
+        <th>Booking Status</th>
+        <th>Accept / Reject</th>
+        {% for i in data %}
+        <tr>
+            <td>{{i.email}}</td>
+            <td>{{i.place}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.bookingStatus}}</td>
+            <td>
+                <form method="post" action="/updateacceptReject">
+                    <input type="text" id="one" name="email" value="{{i.email}}" hidden>
+                    <input type="text" id="two" name="address" value="{{i.address}}" hidden>
+                    <input type="submit" name="bookingStatus" value="Accept">
+                    <input type="submit" name="bookingStatus" value="Reject">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h4>No Record Found</h4>
+        {% endif %}
+
+
+
+    </table>
+
+    <style>
+        td {
+            background-color: rgb(219, 219, 219);
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+
+</body>
+
+</html>
